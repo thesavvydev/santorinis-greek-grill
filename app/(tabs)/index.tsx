@@ -1,70 +1,128 @@
-import { Image, StyleSheet, Platform } from 'react-native';
-
-import { HelloWave } from '@/components/HelloWave';
-import ParallaxScrollView from '@/components/ParallaxScrollView';
-import { ThemedText } from '@/components/ThemedText';
-import { ThemedView } from '@/components/ThemedView';
+import { Image, ScrollView, Text, TouchableOpacity, View } from "react-native";
+import ParallaxScrollView from "@/components/ParallaxScrollView";
 
 export default function HomeScreen() {
   return (
     <ParallaxScrollView
-      headerBackgroundColor={{ light: '#A1CEDC', dark: '#1D3D47' }}
+      headerBackgroundColor={{ light: "#A1CEDC", dark: "#1D3D47" }}
       headerImage={
-        <Image
-          source={require('@/assets/images/partial-react-logo.png')}
-          style={styles.reactLogo}
-        />
-      }>
-      <ThemedView style={styles.titleContainer}>
-        <ThemedText type="title">Welcome!</ThemedText>
-        <HelloWave />
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 1: Try it</ThemedText>
-        <ThemedText>
-          Edit <ThemedText type="defaultSemiBold">app/(tabs)/index.tsx</ThemedText> to see changes.
-          Press{' '}
-          <ThemedText type="defaultSemiBold">
-            {Platform.select({ ios: 'cmd + d', android: 'cmd + m' })}
-          </ThemedText>{' '}
-          to open developer tools.
-        </ThemedText>
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 2: Explore</ThemedText>
-        <ThemedText>
-          Tap the Explore tab to learn more about what's included in this starter app.
-        </ThemedText>
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 3: Get a fresh start</ThemedText>
-        <ThemedText>
-          When you're ready, run{' '}
-          <ThemedText type="defaultSemiBold">npm run reset-project</ThemedText> to get a fresh{' '}
-          <ThemedText type="defaultSemiBold">app</ThemedText> directory. This will move the current{' '}
-          <ThemedText type="defaultSemiBold">app</ThemedText> to{' '}
-          <ThemedText type="defaultSemiBold">app-example</ThemedText>.
-        </ThemedText>
-      </ThemedView>
+        <View className="relative flex-1 justify-center flex-col h-full w-full">
+          <View className="bg-black/50 absolute left-0 top-0 right-0 bottom-0 z-10" />
+          <Image
+            className="absolute w-full h-full"
+            source={require("@/assets/images/2023-hero-pita.png")}
+          />
+          <Image
+            className="mx-auto z-20 w-full"
+            source={require("@/assets/images/logo-white.png")}
+            resizeMode="contain"
+          />
+        </View>
+      }
+    >
+      <View className="p-8 space-y-8">
+        <Text className="text-4xl font-bold uppercase text-zinc-700 tracking-tighter">
+          Fresh and Fast Mediterranean-Inspired Food
+        </Text>
+        <View className="space-y-2">
+          <Text className="text-xl font-semibold">
+            Try our new, chef-created Entrees!
+          </Text>
+          <ScrollView
+            horizontal
+            className="flex-row space-x-6 my-2"
+            showsHorizontalScrollIndicator={false}
+          >
+            <View className="relative space-y-2">
+              <Image
+                resizeMode="cover"
+                source={require("@/assets/images/food-entrees.png")}
+                style={{ width: 250, height: 250 }}
+              />
+              <View>
+                <Text>Flavorful and Varied</Text>
+                <Text className="text-2xl font-bold uppercase text-zinc-700">
+                  Entrees
+                </Text>
+              </View>
+            </View>
+            <View className="relative space-y-2">
+              <Image
+                resizeMode="cover"
+                source={require("@/assets/images/food-pita-or-bowl.png")}
+                style={{ width: 250, height: 250 }}
+              />
+              <View>
+                <Text>Build your own</Text>
+                <Text className="text-2xl font-bold uppercase text-zinc-700">
+                  Pita or Bowl
+                </Text>
+              </View>
+            </View>
+            <View className="relative space-y-2">
+              <Image
+                resizeMode="cover"
+                source={require("@/assets/images/food-sides-and-dessert.png")}
+                style={{ width: 250, height: 250 }}
+              />
+              <View>
+                <Text>Mouth-watering</Text>
+                <Text className="text-2xl font-bold uppercase text-zinc-700">
+                  Sides and Desserts
+                </Text>
+              </View>
+            </View>
+          </ScrollView>
+          <TouchableOpacity
+            className="bg-amber-700 p-4 px-6"
+            style={{
+              shadowOffset: {
+                width: 5,
+                height: 5,
+              },
+              shadowOpacity: 10,
+              shadowRadius: 0,
+            }}
+          >
+            <Text className="text-white font-bold uppercase">Go to menu</Text>
+          </TouchableOpacity>
+        </View>
+        <View className="h-2 bg-zinc-600" />
+        <View>
+          <Text className="text-4xl font-bold uppercase text-zinc-700 tracking-tighter">
+            Catering
+          </Text>
+          <Image
+            className="mx-auto w-full"
+            source={require("@/assets/images/catering.png")}
+            resizeMode="contain"
+            style={{ height: 250 }}
+          />
+          <Text className="text-lg font-semibold text-zinc-500 tracking-tighter">
+            Bring the sizzling flavors of the Mediterranean right to your party,
+            making it a breeze to entertain with style and taste! Our team
+            serves up a mouthwatering buffet or boxed meals, guaranteed to
+            elevate any event to the next level. So, get ready to indulge in a
+            culinary adventure that’ll have your guests talking long after the
+            last bite!
+          </Text>
+          <TouchableOpacity
+            className="bg-amber-700 p-4 px-6 mt-4"
+            style={{
+              shadowOffset: {
+                width: 5,
+                height: 5,
+              },
+              shadowOpacity: 10,
+              shadowRadius: 0,
+            }}
+          >
+            <Text className="text-white font-bold uppercase">
+              Learn More About Catering
+            </Text>
+          </TouchableOpacity>
+        </View>
+      </View>
     </ParallaxScrollView>
   );
 }
-
-const styles = StyleSheet.create({
-  titleContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: 8,
-  },
-  stepContainer: {
-    gap: 8,
-    marginBottom: 8,
-  },
-  reactLogo: {
-    height: 178,
-    width: 290,
-    bottom: 0,
-    left: 0,
-    position: 'absolute',
-  },
-});
