@@ -1,4 +1,4 @@
-import type { PropsWithChildren, ReactElement } from "react";
+import { useEffect, type PropsWithChildren, type ReactElement } from "react";
 import { Dimensions, StyleSheet, useColorScheme } from "react-native";
 import Animated, {
   interpolate,
@@ -8,6 +8,7 @@ import Animated, {
 } from "react-native-reanimated";
 
 import { ThemedView } from "@/components/ThemedView";
+import { useIsFocused } from "@react-navigation/native";
 
 const HEADER_HEIGHT = Dimensions.get("window").height;
 
@@ -45,6 +46,13 @@ export default function ParallaxScrollView({
       ],
     };
   });
+
+  const isFocused = useIsFocused();
+  useEffect(() => {
+    if (isFocused) {
+      scrollRef.current?.scrollTo({ x: 0, y: 0, animated: true });
+    }
+  }, [isFocused, scrollRef]);
 
   return (
     <ThemedView style={styles.container}>
