@@ -33,6 +33,7 @@ export default function CateringFormModal() {
         <TextInput
           className="w-full bg-white border-2 text-[18px] border-zinc-400  p-2 text-zinc-700"
           placeholder="John Doe"
+          placeholderTextColor="#CCC"
         />
       </View>
       <View className="space-y-2">
@@ -42,6 +43,7 @@ export default function CateringFormModal() {
         <TextInput
           className="w-full bg-white border-2 text-[18px] border-zinc-400  p-2 text-zinc-700"
           placeholder="email@example.com"
+          placeholderTextColor="#CCC"
         />
       </View>
       <View className="space-y-2">
@@ -51,22 +53,39 @@ export default function CateringFormModal() {
         <TextInput
           className="w-full bg-white border-2 text-[18px] border-zinc-400  p-2 text-zinc-700"
           placeholder="555-555-5555"
+          placeholderTextColor="#CCC"
         />
       </View>
       <View className="space-y-2">
-        <Text className="text-zinc-200 text-sm">Party Size</Text>
+        <View>
+          <Text className="text-zinc-200 text-sm">
+            Party Size -{" "}
+            <Text className="text-red-400 text-xs italic">Required</Text>
+          </Text>
+          <Text className="text-zinc-300 text-xs">
+            Select the anticipated number of party attendees
+          </Text>
+        </View>
         <Picker itemStyle={{ color: "white", fontWeight: "600" }}>
-          <Picker.Item value={5} label="5 people" />
-          <Picker.Item value={6} label="6 people" />
-          <Picker.Item value={7} label="7 people" />
-          <Picker.Item value={8} label="8 people" />
-          <Picker.Item value={9} label="9 people" />
           <Picker.Item value={10} label="10 people" />
-          <Picker.Item value={11} label="10+ people" />
+          <Picker.Item value={11} label="11 people" />
+          <Picker.Item value={12} label="12 people" />
+          <Picker.Item value={13} label="13 people" />
+          <Picker.Item value={14} label="14 people" />
+          <Picker.Item value={15} label="15 people" />
+          <Picker.Item value={16} label="15+ people" />
         </Picker>
       </View>
       <View className="space-y-2">
-        <Text className="text-zinc-200 text-sm">Catering Package</Text>
+        <View>
+          <Text className="text-zinc-200 text-sm">
+            Catering Package -{" "}
+            <Text className="text-red-400 text-xs italic">Required</Text>
+          </Text>
+          <Text className="text-zinc-300 text-xs">
+            What package are you considering?
+          </Text>
+        </View>
         <Picker
           itemStyle={{ color: "white", fontWeight: "600" }}
           selectedValue={selectedCateringPackage}

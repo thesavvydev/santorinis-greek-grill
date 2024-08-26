@@ -8,6 +8,7 @@ import {
 } from "react-native";
 import ParallaxScrollView from "@/components/ParallaxScrollView";
 import { Href, useRouter } from "expo-router";
+import CateringButton from "@/components/CateringButton";
 
 type CateringPackageType = {
   image: ImageSourcePropType;
@@ -20,28 +21,28 @@ type CateringPackageType = {
 const CATERING_PACKAGES: CateringPackageType[] = [
   {
     image: require("@/assets/images/catering-bowl-or-pita.png"),
-    info: "from $15/Person – Ten Person Minimum Order Includes delivery (within 5 milies of location).",
+    info: "from $15/Person – Ten Person Minimum ",
     more: "/(tabs)/catering/boxed-meals",
     name: "Boxed Meals",
     number: 1,
   },
   {
     image: require("@/assets/images/catering-bowl-buffet.png"),
-    info: "from $16.50/Person – Ten Person Minimum Order Includes delivery (within 5 milies of location).",
+    info: "from $16.50/Person – Ten Person Minimum ",
     more: "/(tabs)/catering/bowl-buffet",
     name: "Bowl Buffet",
     number: 2,
   },
   {
     image: require("@/assets/images/catering-bowl-buffet.png"),
-    info: "from $16.50/Person – Ten Person Minimum Order Includes delivery (within 5 milies of location).",
+    info: "from $16.50/Person – Ten Person Minimum ",
     more: "/(tabs)/catering/pita-buffet",
     name: "Pita Buffet",
     number: 3,
   },
   {
     image: require("@/assets/images/catering-bowl-buffet.png"),
-    info: "from $18.50/Person – Ten Person Minimum Order Includes delivery (within 5 milies of location)",
+    info: "from $18.50/Person",
     more: "/(tabs)/catering/ultimate-combo",
     name: "Pita and Bowl Buffet",
     number: 4,
@@ -79,8 +80,11 @@ export default function CateringScreen() {
           </Text>
           <Text className="text-base text-zinc-500">
             Have Questions or Need a Custom Package? Our Catering Manager would
-            love to help you out!
+            love to help you out! Call us at 385-390-1302
           </Text>
+        </View>
+        <View>
+          <CateringButton cateringPackage="boxed-meals" />
         </View>
         <View>
           <Text className="text-base tracking-tighter text-zinc-600 font-bold">
@@ -115,7 +119,7 @@ export default function CateringScreen() {
         <ScrollView
           horizontal
           showsHorizontalScrollIndicator={false}
-          className="flex-row space-x-10 py-4"
+          className="flex-row space-x-10 py-2"
         >
           {CATERING_PACKAGES.map((cateringPackage) => (
             <View className="w-72 space-y-4" key={cateringPackage.number}>
@@ -152,6 +156,7 @@ export default function CateringScreen() {
               </TouchableOpacity>
             </View>
           ))}
+          <View />
         </ScrollView>
         <View className="h-2 bg-zinc-600" />
         <Text className="text-4xl font-bold uppercase text-zinc-700 tracking-tighter">
@@ -191,21 +196,9 @@ export default function CateringScreen() {
             more enjoyable! Service fees apply.
           </Text>
         </View>
-        <TouchableOpacity
-          className="bg-amber-700 p-4 px-6"
-          style={{
-            shadowOffset: {
-              width: 5,
-              height: 5,
-            },
-            shadowOpacity: 10,
-            shadowRadius: 0,
-          }}
-        >
-          <Text className="text-white font-bold uppercase">
-            Catering 385-390-1302
-          </Text>
-        </TouchableOpacity>
+        <View>
+          <CateringButton cateringPackage="boxed-meals" />
+        </View>
       </View>
     </ParallaxScrollView>
   );
