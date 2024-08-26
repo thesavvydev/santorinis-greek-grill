@@ -1,7 +1,9 @@
 import { Image, ScrollView, Text, TouchableOpacity, View } from "react-native";
 import ParallaxScrollView from "@/components/ParallaxScrollView";
+import { useRouter } from "expo-router";
 
 export default function HomeScreen() {
+  const router = useRouter();
   return (
     <ParallaxScrollView
       headerBackgroundColor={{ light: "#A1CEDC", dark: "#1D3D47" }}
@@ -83,6 +85,7 @@ export default function HomeScreen() {
               shadowOpacity: 10,
               shadowRadius: 0,
             }}
+            onPress={() => router.push("/(tabs)/menu")}
           >
             <Text className="text-white font-bold uppercase">Go to menu</Text>
           </TouchableOpacity>
@@ -116,6 +119,7 @@ export default function HomeScreen() {
               shadowOpacity: 10,
               shadowRadius: 0,
             }}
+            onPress={() => router.push("/(tabs)/catering")}
           >
             <Text className="text-white font-bold uppercase">
               Learn More About Catering
