@@ -35,6 +35,13 @@ export default function CateringLayout() {
         name="ultimate-combo"
         options={{ title: "Ultimate Combo" }}
       />
+      <Stack.Screen
+        name="catering-form-modal"
+        options={{
+          headerShown: false,
+          presentation: "modal",
+        }}
+      />
     </Stack>
   );
 }

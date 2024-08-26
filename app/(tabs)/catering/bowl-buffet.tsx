@@ -1,4 +1,5 @@
-import { Image, ScrollView, Text, TouchableOpacity, View } from "react-native";
+import CateringButton from "@/components/CateringButton";
+import { Image, ScrollView, Text, View } from "react-native";
 
 export default function CateringBowlBuffet() {
   return (
@@ -19,6 +20,9 @@ export default function CateringBowlBuffet() {
           <Text className="text-zinc-600 italic font-bold text-sm">
             Includes Baklava for Dessert
           </Text>
+        </View>
+        <View>
+          <CateringButton cateringPackage="bowl-buffet" />
         </View>
         <Text className="font-bold text-2xl uppercase text-zinc-800">
           BUILD YOUR OWN BOWL
@@ -65,21 +69,9 @@ export default function CateringBowlBuffet() {
             & Balsamic, Donor Aioli, Creamy Roasted Garlic, or Calabrian Chili
           </Text>
         </View>
-        <TouchableOpacity
-          className="bg-amber-700 p-4 px-6"
-          style={{
-            shadowOffset: {
-              width: 5,
-              height: 5,
-            },
-            shadowOpacity: 10,
-            shadowRadius: 0,
-          }}
-        >
-          <Text className="text-white font-bold uppercase">
-            Catering 385-390-1302
-          </Text>
-        </TouchableOpacity>
+        <View>
+          <CateringButton cateringPackage="bowl-buffet" />
+        </View>
       </View>
     </ScrollView>
   );

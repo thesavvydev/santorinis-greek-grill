@@ -1,4 +1,5 @@
-import { Image, ScrollView, Text, TouchableOpacity, View } from "react-native";
+import CateringButton from "@/components/CateringButton";
+import { Image, ScrollView, Text, View } from "react-native";
 
 export default function CateringBoxedMeals() {
   return (
@@ -16,6 +17,9 @@ export default function CateringBoxedMeals() {
           <Text className="text-zinc-600 italic font-bold text-sm">
             Includes Utensils and Paper Products
           </Text>
+        </View>
+        <View>
+          <CateringButton cateringPackage="boxed-meals" />
         </View>
         <Text className="font-bold text-2xl uppercase text-zinc-800">
           BOWL OR PITA
@@ -46,21 +50,9 @@ export default function CateringBoxedMeals() {
             Tzatziki Sauce. Served on a bed of fragrant turmeric lemon rice.
           </Text>
         </View>
-        <TouchableOpacity
-          className="bg-amber-700 p-4 px-6"
-          style={{
-            shadowOffset: {
-              width: 5,
-              height: 5,
-            },
-            shadowOpacity: 10,
-            shadowRadius: 0,
-          }}
-        >
-          <Text className="text-white font-bold uppercase">
-            Catering 385-390-1302
-          </Text>
-        </TouchableOpacity>
+        <View>
+          <CateringButton cateringPackage="boxed-meals" />
+        </View>
       </View>
     </ScrollView>
   );
