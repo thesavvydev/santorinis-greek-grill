@@ -1,5 +1,5 @@
-import { Image, ScrollView, Text, TouchableOpacity, View } from "react-native";
 import ParallaxScrollView from "@/components/ParallaxScrollView";
+import { Image, ScrollView, Text, View } from "react-native";
 
 const ENTREES = [
   {

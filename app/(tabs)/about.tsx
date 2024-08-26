@@ -1,5 +1,5 @@
-import { Image, ScrollView, Text, TouchableOpacity, View } from "react-native";
 import ParallaxScrollView from "@/components/ParallaxScrollView";
+import { Image, Text, View } from "react-native";
 
 export default function AboutScreen() {
   return (
@@ -59,81 +59,71 @@ export default function AboutScreen() {
             The People Who Make It Happen
           </Text>
         </View>
-        <ScrollView
-          horizontal
-          showsHorizontalScrollIndicator={false}
-          className="flex-row space-x-6"
-        >
-          <View className="w-72 space-y-4">
-            <Image
-              className="h-64 w-full mx-auto"
-              source={require("@/assets/images/sean-dehghani.png")}
-            />
-            <View>
-              <Text className="text-base font-bold text-zinc-700">
-                Sean Dehghani
-              </Text>
-              <Text className="font-semibold tracking-tighter text-zinc-600">
-                Founder & Co-Owner
-              </Text>
-            </View>
-            <Text className="text-base tracking-tighter text-zinc-600">
-              Sean is the backbone of Santorini’s from concept to creation, with
-              over eighteen years of experience and expertise in the restaurant
-              industry. The menu development, restaurant layout, operations, as
-              well as marketing strategy has all been originated and managed by
-              Sean. His involvement in a commercial construction company means
-              every detail of each location has been overseen and customized to
-              his high standards.
-            </Text>
-            <Text className="text-base tracking-tighter text-zinc-600">
-              If he’s not at the restaurant, you will find Sean spending time
-              with his wife and three children. They love to cook together and
-              play together. He is active in his community, often serving as a
-              board member for organizations such as the Davis County Republican
-              Party. He supports law enforcement and health care professionals
-              and is always willing to participate in community fundraisers.
-            </Text>
-            <Text className="text-base tracking-tighter text-zinc-600">
-              Sean’s desire to give back to the community is one of the
-              differentiating aspects of the Santorini brand. “When my wife and
-              I started this, we told each other that we would make sure we give
-              back to the community as much as possible and not be a typical
-              restaurant—not just take, take, take. Being a part of our
-              community and our employees’ lives’ is very important to us.”
-            </Text>
-          </View>
-          <View className="w-72 space-y-4">
-            <Image
-              className="h-64 w-full mx-auto"
-              source={require("@/assets/images/massoud-shafizadeh.png")}
-            />
-            <View>
-              <Text className="text-base font-bold text-zinc-700">
-                Massoud Shafizadeh
-              </Text>
-              <Text className="font-semibold tracking-tighter text-zinc-600">
-                Co-Owner
-              </Text>
-            </View>
-            <Text className="text-base tracking-tighter text-zinc-600">
-              Massoud brings depth and a wealth of knowledge and experience to
-              Santorini’s. He has over thirty years in several businesses,
-              including a home building business as a general contractor and
-              owning twenty-two Ambassador Pizza locations. His educational
-              background is in Engineering with a Bachelor’s and Master’s
-              Degrees from the University of Utah.
-            </Text>
-            <Text className="text-base tracking-tighter text-zinc-600">
-              He and his wife enjoy traveling and attending concerts together.
-              They have four children and seven grandchildren.
-            </Text>
-            <Text className="text-base tracking-tighter text-zinc-600">
-              Together, Sean and Massoud share their passion for quality, fresh
-              food served fast-casual for today’s busy families.
-            </Text>
-          </View>
-        </ScrollView>
+        <Image
+          className="h-64 w-full mx-auto"
+          source={require("@/assets/images/sean-dehghani.png")}
+        />
+        <View>
+          <Text className="text-base font-bold text-zinc-700">
+            Sean Dehghani
+          </Text>
+          <Text className="font-semibold tracking-tighter text-zinc-600">
+            Founder & Co-Owner
+          </Text>
+        </View>
+        <Text className="text-base tracking-tighter text-zinc-600">
+          Sean is the backbone of Santorini’s from concept to creation, with
+          over eighteen years of experience and expertise in the restaurant
+          industry. The menu development, restaurant layout, operations, as well
+          as marketing strategy has all been originated and managed by Sean. His
+          involvement in a commercial construction company means every detail of
+          each location has been overseen and customized to his high standards.
+        </Text>
+        <Text className="text-base tracking-tighter text-zinc-600">
+          If he’s not at the restaurant, you will find Sean spending time with
+          his wife and three children. They love to cook together and play
+          together. He is active in his community, often serving as a board
+          member for organizations such as the Davis County Republican Party. He
+          supports law enforcement and health care professionals and is always
+          willing to participate in community fundraisers.
+        </Text>
+        <Text className="text-base tracking-tighter text-zinc-600">
+          Sean’s desire to give back to the community is one of the
+          differentiating aspects of the Santorini brand. “When my wife and I
+          started this, we told each other that we would make sure we give back
+          to the community as much as possible and not be a typical
+          restaurant—not just take, take, take. Being a part of our community
+          and our employees’ lives’ is very important to us.”
+        </Text>
+        <View />
+        <Image
+          className="h-64 w-full mx-auto"
+          source={require("@/assets/images/massoud-shafizadeh.png")}
+        />
+        <View>
+          <Text className="text-base font-bold text-zinc-700">
+            Massoud Shafizadeh
+          </Text>
+          <Text className="font-semibold tracking-tighter text-zinc-600">
+            Co-Owner
+          </Text>
+        </View>
+        <Text className="text-base tracking-tighter text-zinc-600">
+          Massoud brings depth and a wealth of knowledge and experience to
+          Santorini’s. He has over thirty years in several businesses, including
+          a home building business as a general contractor and owning twenty-two
+          Ambassador Pizza locations. His educational background is in
+          Engineering with a Bachelor’s and Master’s Degrees from the University
+          of Utah.
+        </Text>
+        <Text className="text-base tracking-tighter text-zinc-600">
+          He and his wife enjoy traveling and attending concerts together. They
+          have four children and seven grandchildren.
+        </Text>
+        <Text className="text-base tracking-tighter text-zinc-600">
+          Together, Sean and Massoud share their passion for quality, fresh food
+          served fast-casual for today’s busy families.
+        </Text>
       </View>
     </ParallaxScrollView>
   );
