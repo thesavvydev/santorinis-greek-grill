@@ -1,5 +1,6 @@
+import { Ionicons } from "@expo/vector-icons";
 import { Picker } from "@react-native-picker/picker";
-import { useLocalSearchParams } from "expo-router";
+import { useLocalSearchParams, useRouter } from "expo-router";
 import { useState } from "react";
 import {
   ScrollView,
@@ -11,6 +12,7 @@ import {
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 export default function CateringFormModal() {
+  const router = useRouter();
   const { bottom } = useSafeAreaInsets();
   const { cateringPackage } = useLocalSearchParams<{
     cateringPackage: string;
@@ -23,6 +25,12 @@ export default function CateringFormModal() {
       className="bg-zinc-800 p-8 space-y-4"
       showsVerticalScrollIndicator={false}
     >
+      <TouchableOpacity className="flex-row items-center" onPress={router.back}>
+        <Text className="text-zinc-200">
+          <Ionicons name="chevron-back" size={18} />
+        </Text>
+        <Text className="font-semibold uppercase text-zinc-200">Go Back</Text>
+      </TouchableOpacity>
       <Text className="text-3xl font-bold uppercase text-white">
         Request Catering
       </Text>

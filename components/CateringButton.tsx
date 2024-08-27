@@ -7,7 +7,7 @@ export default function CateringButton({
   cateringPackage: string;
 }) {
   const router = useRouter();
-  console.log({ cateringPackage });
+
   return (
     <TouchableOpacity
       onPress={() =>
