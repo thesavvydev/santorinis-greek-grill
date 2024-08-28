@@ -1,7 +1,7 @@
 import ParallaxScrollView from "@/components/ParallaxScrollView";
 import { Image, ScrollView, Text, View } from "react-native";
 
-const ENTREES = [
+export const ENTREES = [
   {
     id: 1,
     name: "Original Pita (Lamb/Beef or Lemon Chicken)",
@@ -52,7 +52,7 @@ const ENTREES = [
   },
 ];
 
-const SAUCES = [
+export const SAUCES = [
   {
     id: 1,
     image: require("@/assets/images/menu_sauces_tzatziki.png"),
@@ -103,7 +103,7 @@ const SAUCES = [
   },
 ];
 
-const FRIES_AND_SIDES = [
+export const FRIES_AND_SIDES = [
   {
     id: 1,
     image: require("@/assets/images/sides_house_fries.png"),
@@ -130,7 +130,7 @@ const FRIES_AND_SIDES = [
   },
 ];
 
-const BUILD_YOUR_OWN = [
+export const BUILD_YOUR_OWN = [
   {
     id: 1,
     image: require("@/assets/images/menu_build_your_own_pita.png"),
@@ -145,7 +145,7 @@ const BUILD_YOUR_OWN = [
   },
 ];
 
-const KIDS_MEALS = [
+export const KIDS_MEALS = [
   {
     id: 1,
     image: require("@/assets/images/menu_pita_kids.png"),
@@ -160,7 +160,7 @@ const KIDS_MEALS = [
   },
 ];
 
-const DESSERTS = [
+export const DESSERTS = [
   {
     id: 1,
     image: require("@/assets/images/menu_bbcake.png"),
