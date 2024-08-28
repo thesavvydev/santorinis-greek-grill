@@ -1,6 +1,7 @@
 import { Image, ScrollView, Text, TouchableOpacity, View } from "react-native";
 import ParallaxScrollView from "@/components/ParallaxScrollView";
 import { useRouter } from "expo-router";
+import DoubleButton from "@/components/DoubleButton";
 
 export default function HomeScreen() {
   const router = useRouter();
@@ -75,20 +76,11 @@ export default function HomeScreen() {
               </View>
             </View>
           </ScrollView>
-          <TouchableOpacity
-            className="bg-amber-700 p-4 px-6"
-            style={{
-              shadowOffset: {
-                width: 5,
-                height: 5,
-              },
-              shadowOpacity: 10,
-              shadowRadius: 0,
-            }}
-            onPress={() => router.push("/(tabs)/menu")}
-          >
-            <Text className="text-white font-bold uppercase">Go to menu</Text>
-          </TouchableOpacity>
+          <View>
+            <DoubleButton onPress={() => router.push("/(tabs)/menu")}>
+              <Text className="text-white font-bold uppercase">Go to menu</Text>
+            </DoubleButton>
+          </View>
         </View>
         <View className="h-2 bg-zinc-600" />
         <View>
@@ -109,22 +101,13 @@ export default function HomeScreen() {
             culinary adventure that’ll have your guests talking long after the
             last bite!
           </Text>
-          <TouchableOpacity
-            className="bg-amber-700 p-4 px-6 mt-4"
-            style={{
-              shadowOffset: {
-                width: 5,
-                height: 5,
-              },
-              shadowOpacity: 10,
-              shadowRadius: 0,
-            }}
-            onPress={() => router.push("/(tabs)/catering")}
-          >
+        </View>
+        <View>
+          <DoubleButton onPress={() => router.push("/(tabs)/catering")}>
             <Text className="text-white font-bold uppercase">
               Learn More About Catering
             </Text>
-          </TouchableOpacity>
+          </DoubleButton>
         </View>
       </View>
     </ParallaxScrollView>
