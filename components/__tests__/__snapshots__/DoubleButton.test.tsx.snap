@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DoubleButton matches snapshot 1`] = `
+<View
+  accessibilityState={
+    {
+      "busy": undefined,
+      "checked": undefined,
+      "disabled": undefined,
+      "expanded": undefined,
+      "selected": undefined,
+    }
+  }
+  accessibilityValue={
+    {
+      "max": undefined,
+      "min": undefined,
+      "now": undefined,
+      "text": undefined,
+    }
+  }
+  accessible={true}
+  collapsable={false}
+  focusable={true}
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    {
+      "backgroundColor": "#b45309",
+      "opacity": 1,
+      "paddingBottom": 16,
+      "paddingLeft": 24,
+      "paddingRight": 24,
+      "paddingTop": 16,
+      "shadowOffset": {
+        "height": 5,
+        "width": 5,
+      },
+      "shadowOpacity": 10,
+      "shadowRadius": 0,
+    }
+  }
+>
+  Test
+</View>
+`;

@@ -1,31 +1,32 @@
 import { useRouter } from "expo-router";
-import { Text, TouchableOpacity } from "react-native";
+import { Text } from "react-native";
+import DoubleButton from "./DoubleButton";
+
+enum CATERING_PACKAGES {
+  "bowl-buffet",
+  "pita-buffet",
+  "boxed-meals",
+  "ultimate-combo",
+}
+
+type CateringButtonType = {
+  cateringPackage: keyof typeof CATERING_PACKAGES;
+};
 
 export default function CateringButton({
   cateringPackage,
-}: {
-  cateringPackage: string;
-}) {
+}: CateringButtonType) {
   const router = useRouter();
 
   return (
-    <TouchableOpacity
-      onPress={() =>
+    <DoubleButton
+      onPress={() => {
         router.push(
           `/(tabs)/catering/catering-form-modal?cateringPackage=${cateringPackage}`
-        )
-      }
-      className="bg-amber-700 p-4 px-6"
-      style={{
-        shadowOffset: {
-          width: 5,
-          height: 5,
-        },
-        shadowOpacity: 10,
-        shadowRadius: 0,
+        );
       }}
     >
       <Text className="text-white font-bold uppercase">Request Catering</Text>
-    </TouchableOpacity>
+    </DoubleButton>
   );
 }
